@@ -11,12 +11,7 @@ data:
       username: system:node:{{EC2PrivateDNSName}}
       - system:masters
       rolearn: arn:aws:iam::550488935278:role/UdacityFlaskDeployCBKubectlRole
-      username: build
- 	mapUsers: |
-  - userarn: arn:aws:iam::550488935278:user/adminShems
-    username: adminShems
-    groups:
-      - system:masters
+      username: build 
 kind: ConfigMap
 metadata:
   creationTimestamp: "2022-05-11T11:16:26Z"
@@ -24,3 +19,9 @@ metadata:
   namespace: kube-system
   resourceVersion: "1631"
   uid: 86402a4e-a9ff-4721-8c24-f0c4258f7440
+  
+  mapUsers: |
+  - userarn: arn:aws:iam::550488935278:user/adminShems
+    username: adminShems
+    groups:
+      - system:masters
